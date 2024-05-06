@@ -1,0 +1,9 @@
+@import "app/styles/mixins";
+
+.gallery {
+  @include flexbox;
+
+  .movieCard {
+
+  }
+}
