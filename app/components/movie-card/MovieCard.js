@@ -9,7 +9,11 @@ const MovieCard = ({movie}) => {
       }`} alt="Movie pic"/>
     </div>
     <h4 className={s.title}>{movie.title}</h4>
-    <p className={s.overview}>{movie.overview}</p>
+    <p className={s.overview}>
+      {movie.overview
+        ? movie.overview
+        : '. . .'}
+    </p>
   </div>
 }
 

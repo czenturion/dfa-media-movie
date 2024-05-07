@@ -10,7 +10,7 @@ export default function Header() {
 
   return <div className={s.header}>
     <form onSubmit={submitHandler}>
-      <input className={s.search} type="text" placeholder="Search movie..."/>
+      <input className={s.search} type="text" placeholder="Найти фильм..."/>
     </form>
   </div>
 }
