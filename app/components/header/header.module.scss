@@ -4,9 +4,9 @@
   @include flexbox(row, wrap, null, null, 10px);
   background-color: #646464;
   padding: 12px 40px;
-  position:fixed;
-  top:0;
-  width:100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   -webkit-box-shadow: -1px 3px 5px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: -1px 3px 5px -1px rgba(0,0,0,0.75);

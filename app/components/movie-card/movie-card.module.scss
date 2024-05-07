@@ -1,0 +1,35 @@
+@import "app/styles/mixins";
+
+.movieCard {
+  @include flexbox(row, wrap, $gap: 5px);
+  @include size(500px);
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+
+  .backdrop {
+    width: 100%;
+    .background {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .title {
+    @include size(350px, 40px);
+    padding: 5px;
+  }
+
+  .overview {
+    @include size(350px, 200px);
+    display: none;
+  }
+
+  &:hover {
+    .overview {
+      display: block;
+    }
+  }
+}

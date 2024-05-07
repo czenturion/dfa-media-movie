@@ -27,6 +27,10 @@
   $w: null,
   $h: null,
 ) {
-  width: $w;
-  height: $h;
+  @if $w {
+    width: $w;
+  }
+  @if $h {
+    height: $h;
+  }
 }
