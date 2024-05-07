@@ -1,10 +1,32 @@
+@mixin flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 @mixin flexbox(
   $direction: row,
-  $wrap: wrap,
+  $wrap: nowrap,
   $alignItems: null,
-  $justifyItems: null,
+  $justifyContent: start,
+  $gap: 0,
 ) {
-  display: flex;
+  @include flex;
   flex-direction: $direction;
   flex-wrap: $wrap;
+  @if $alignItems {
+    align-items: $alignItems;
+  }
+  justify-content: $justifyContent;
+  gap: $gap;
+}
+
+@mixin size(
+  $w: null,
+  $h: null,
+) {
+  width: $w;
+  height: $h;
 }

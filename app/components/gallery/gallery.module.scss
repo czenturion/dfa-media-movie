@@ -1,9 +1,31 @@
 @import "app/styles/mixins";
 
 .gallery {
-  @include flexbox;
+  @include flexbox(row, wrap, center, center, 20px);
+  margin: 80px 20px 20px;
 
   .movieCard {
+    @include flexbox(column, wrap, center, center, 5px);
+    @include size(400px, 300px);
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
 
+    .title {
+      @include size(150px, 40px);
+    }
+
+    .overview {
+      @include size(350px, 200px);
+      display: none;
+    }
+
+    &:hover {
+      .overview {
+        display: block;
+      }
+    }
   }
 }

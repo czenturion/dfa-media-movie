@@ -1,12 +1,16 @@
+"use client"
+
+import s from "./header.module.scss";
+
 export default function Header() {
 
-  const onSubmit = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
   }
 
-  return <nav>
-    <form>
-      <input type="text" placeholder="Search movie..."/>
+  return <div className={s.header}>
+    <form onSubmit={submitHandler}>
+      <input className={s.search} type="text" placeholder="Search movie..."/>
     </form>
-  </nav>
+  </div>
 }

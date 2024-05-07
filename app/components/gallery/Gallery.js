@@ -9,7 +9,7 @@ import s from "./gallery.module.scss";
 
 
 const Gallery = () => {
-  const movies = useSelector(state => state.movies.value)
+  const movies = useSelector(state => state.movies.value);
   const dispatch = useDispatch();
   const { data, error, isLoading } = useQuery(
     'movies',
@@ -18,20 +18,21 @@ const Gallery = () => {
 
   useEffect(() => {
     if (data) dispatch(add(data))
+    if (movies && data) dispatch(swap(data))
   }, [data]);
 
-  console.log(movies)
+  console.log(movies, error)
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
 
   return <div className={s.gallery}>
     {movies ? movies.map(movie => (
       <div className={s.movieCard} key={movie.id}>
-        {movie.title}
+        <h4 className={s.title}>{movie.title}</h4>
+        <p className={s.overview}>{movie.overview}</p>
       </div>
     )) : <></>}
   </div>
-}
+};
 
 export default Gallery;

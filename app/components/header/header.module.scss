@@ -1,0 +1,36 @@
+@import "app/styles/mixins";
+
+.header {
+  @include flexbox(row, wrap, null, null, 10px);
+  background-color: #646464;
+  padding: 12px 40px;
+  position:fixed;
+  top:0;
+  width:100%;
+
+  -webkit-box-shadow: -1px 3px 5px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 3px 5px -1px rgba(0,0,0,0.75);
+  box-shadow: -1px 3px 5px -1px rgba(0,0,0,0.75);
+
+  .search {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    width: 35vw;
+    max-width: 300px;
+
+    &:active {
+      outline: none;
+    }
+    &:focus {
+      outline: #424242 solid 1px;
+    }
+    &:hover {
+      outline: #424242 solid 1px;
+    }
+  }
+  @media screen and (max-width: 475px) {
+    padding: 12px 20px;
+  }
+}
+
