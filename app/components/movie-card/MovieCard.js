@@ -8,7 +8,7 @@ const MovieCard = ({movie}) => {
       <img className={s.background} src={`${process.env.API_GET_IMAGE_URL}w500${movie.backdrop_path
       }`} alt="Movie pic"/>
     </div>
-    <h4 className={s.title}>{movie.title}</h4>
+    <h4 className={s.title}>{movie.release_date.slice(0, 4) + ' ' + movie.title}</h4>
     <p className={s.overview}>
       {movie.overview
         ? movie.overview
