@@ -2,5 +2,5 @@
 
 .gallery {
   @include flexbox(row, wrap, center, center, 20px);
-  margin: 80px 20px 20px;
+  margin: 55px 0 0;
 }

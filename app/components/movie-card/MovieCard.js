@@ -7,13 +7,16 @@ const MovieCard = ({movie}) => {
     <div className={s.backdrop}>
       <img className={s.background} src={`${process.env.API_GET_IMAGE_URL}w500${movie.backdrop_path
       }`} alt="Movie pic"/>
+      <div className={s.overview}>
+        {movie.overview
+          ? movie.overview
+          : '. . .'}
+      </div>
     </div>
-    <h4 className={s.title}>{movie.release_date.slice(0, 4) + ' ' + movie.title}</h4>
-    <p className={s.overview}>
-      {movie.overview
-        ? movie.overview
-        : '. . .'}
-    </p>
+    <div>
+      <h4 className={s.title}>{movie.title}</h4>
+      <p className={s.year}>{movie.release_date.slice(0, 4)}</p>
+    </div>
   </div>
 }
 

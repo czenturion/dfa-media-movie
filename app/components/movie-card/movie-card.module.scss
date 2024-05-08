@@ -9,14 +9,18 @@
   -moz-box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
   box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
   border-radius: 2px;
-  position: relative;
   background-color: #9d9d9d;
 
   .backdrop {
+    position: relative;
     width: 100%;
     min-height: 160px;
-    opacity: 1;
-    transition: opacity .6s ease;
+
+    img {
+      opacity: 1;
+      transition: opacity .6s ease;
+    }
+
     .background {
       width: 100%;
       height: 100%;
@@ -24,24 +28,36 @@
   }
 
   .title {
-    @include size(350px, 50px);
+    @include size(350px, 40px);
+    padding: 5px;
+  }
+
+  .year {
     padding: 5px;
   }
 
   .overview {
-    @include size(350px);
+    @include size(100%, 65%);
     display: none;
+    position: absolute;
+    top: 0;
     padding: 5px 5px 10px;
   }
 
   &:hover {
     .backdrop {
-      opacity: 0.2;
+
+      img {
+        opacity: 0.2;
+      }
     }
 
     .overview {
-      display: block;
-      position: absolute;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
 }

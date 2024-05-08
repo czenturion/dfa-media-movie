@@ -7,6 +7,7 @@ import { fetchMovies } from '@/app/api/movies';
 import { add, swap} from '@/app/store/reducers';
 import s from "./gallery.module.scss";
 import MovieCard from "@/app/components/movie-card/MovieCard";
+import MovieSlider from "@/app/components/movie-slider/MovieSlider";
 
 
 const Gallery = () => {
@@ -27,9 +28,18 @@ const Gallery = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return <div className={s.gallery}>
-    {movies
-      ? movies.map(movie => <MovieCard movie={movie}/>)
-      : <></>}
+    <div style={{width: "100%"}}>
+    {
+      movies
+        ? <MovieSlider movies={movies}/>
+        : <></>
+    }
+    </div>
+    <div className={s.gallery}>
+      {movies
+        ? movies.map(movie => <MovieCard movie={movie}/>)
+        : <></>}
+    </div>
   </div>
 };
 

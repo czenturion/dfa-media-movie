@@ -7,6 +7,9 @@ const nextConfig = {
     API_GET_MOVIES_URL: process.env.API_GET_MOVIES_URL,
     API_GET_IMAGE_URL: process.env.API_GET_IMAGE_URL,
   },
+  images: {
+    domains: ['image.tmdb.org', 'themoviedb.org'],
+  },
 };
 
 export default nextConfig;
