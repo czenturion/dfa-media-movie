@@ -23,21 +23,15 @@ const Gallery = () => {
     if (movies && data) dispatch(swap(data))
   }, [data]);
 
-  console.log(movies, error)
-
   if (isLoading) return <div>Loading...</div>;
 
   return <div className={s.gallery}>
     <div style={{width: "100%"}}>
-    {
-      movies
-        ? <MovieSlider movies={movies}/>
-        : <></>
-    }
+    <MovieSlider movies={movies}/>
     </div>
     <div className={s.searchResult}>
       {movies
-        ? movies.map(movie => <MovieCard movie={movie}/>)
+        ? movies.map(movie => <MovieCard key={movie.id} movie={movie}/>)
         : <></>}
     </div>
   </div>

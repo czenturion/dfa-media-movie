@@ -3,7 +3,7 @@
 .header {
   @include flexbox(row, wrap, null, null, 10px);
   background-color: #646464;
-  padding: 12px 40px;
+  padding: 6px 40px;
   position: fixed;
   top: 0;
   width: 100%;

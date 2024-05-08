@@ -1,12 +1,16 @@
 "use client"
 
+import { movieImageSize, urlTransform } from "@/app/api/movies";
 import s from "./movie-card.module.scss";
 
 const MovieCard = ({movie}) => {
   return <div className={s.movieCard} key={movie.id}>
     <div className={s.backdrop}>
-      <img className={s.background} src={`${process.env.API_GET_IMAGE_URL}w500${movie.backdrop_path
-      }`} alt="Movie pic"/>
+      <img
+        className={s.background}
+        src={urlTransform.fetchMovieImage(movieImageSize.small, movie.backdrop_path)}
+        alt="Movie poster"
+      />
       <div className={s.overview}>
         {movie.overview
           ? movie.overview

@@ -24,3 +24,14 @@ export const fetchMovies = async () => {
     return [];
   }
 };
+
+export const movieImageSize = {
+  small: 'w500',
+  original: 'original'
+}
+
+export const urlTransform = {
+  fetchMovieImage: (size, backdropPath) => {
+    return new URL(process.env.API_GET_IMAGE_URL + size + backdropPath).toString()
+  }
+}
