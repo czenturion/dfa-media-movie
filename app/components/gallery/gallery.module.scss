@@ -6,6 +6,6 @@
 
   .searchResult {
     @include flexbox(row, wrap, center, center, 20px);
-    margin: 55px 20px 20px;
+    padding: 10px 20px 20px;
   }
 }
