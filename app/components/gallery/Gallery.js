@@ -35,7 +35,7 @@ const Gallery = () => {
         : <></>
     }
     </div>
-    <div className={s.gallery}>
+    <div className={s.searchResult}>
       {movies
         ? movies.map(movie => <MovieCard movie={movie}/>)
         : <></>}
