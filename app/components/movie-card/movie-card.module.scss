@@ -2,7 +2,7 @@
 
 .movieCard {
   @include flexbox(row, wrap, $gap: 5px);
-  @include size($w: 90%, $mw: 500px);
+  @include size($w: 95%, $mw: 500px);
   overflow: hidden;
   cursor: pointer;
   -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
