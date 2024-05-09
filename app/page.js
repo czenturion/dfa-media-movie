@@ -1,9 +1,13 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from 'react-query';
-import Gallery from "@/app/components/gallery/Gallery";
-import store from './store/store';
 import { Provider } from 'react-redux';
+import store from './store/store';
+
+import Gallery from "@/app/components/gallery/Gallery";
+import "nprogress/nprogress.css";
+
+
 
 const queryClient = new QueryClient({
   defaultQueryObserverOptions: {

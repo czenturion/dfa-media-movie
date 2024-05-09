@@ -1,6 +1,14 @@
 "use client"
 
 import s from "./header.module.scss";
+import dynamic from "next/dynamic";
+
+// const TopProgressBar = dynamic(
+//   () => {
+//     return import("components/TopProgressBar");
+//   },
+//   { ssr: false },
+// );
 
 export default function Header() {
 

@@ -29,16 +29,8 @@
   $mw: null,
   $mh: null,
 ) {
-  @if $w {
-    width: $w;
-  }
-  @if $h {
-    height: $h;
-  }
-  @if $mw {
-    max-width: $mw;
-  }
-  @if $mh {
-    max-height: $mh;
-  }
+  @if $w { width: $w }
+  @if $h { height: $h }
+  @if $mw { max-width: $mw }
+  @if $mh { max-height: $mh }
 }
