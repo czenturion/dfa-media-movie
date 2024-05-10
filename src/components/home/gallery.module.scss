@@ -1,8 +1,7 @@
-@import "app/styles/mixins";
+@import "src/styles/mixins";
 
 .gallery {
   @include flexbox(row, wrap, center, center, 20px);
-  margin: 44px 0 0;
 
   .searchResult {
     @include flexbox(row, wrap, center, center, 20px);

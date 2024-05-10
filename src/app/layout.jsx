@@ -1,8 +1,10 @@
 import { Inter } from "next/font/google";
-import Header from "@/app/components/header/Header";
-import "./styles/globals.scss";
+import Header from "@/src/components/header/Header";
+import "@/src/styles/globals.scss";
+import "nprogress/nprogress.css";
+import s from "./layout.module.scss";
 
-const inter = Inter({subsets: ["latin"]});
+const inter = Inter({subsets: ["latin"], weight: "400"});
 
 export const metadata = {
   title: "The Movies Data Base ",
@@ -20,10 +22,10 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
     <body className={inter.className}>
-    <div>
       <Header/>
-      {children}
-    </div>
+      <div className={s.content}>
+        {children}
+      </div>
     </body>
     </html>
   );

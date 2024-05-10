@@ -1,7 +1,8 @@
 "use client"
 
-import { movieImageSize, urlTransform } from "@/app/api/movies";
+import { movieImageSize, urlTransform } from "@/src/api/movies";
 import s from "./movie-card.module.scss";
+import Link from "next/link";
 
 const MovieCard = ({movie}) => {
   return <div className={s.movieCard} key={movie.id}>
@@ -18,7 +19,7 @@ const MovieCard = ({movie}) => {
       </div>
     </div>
     <div>
-      <h4 className={s.title}>{movie.title}</h4>
+      <Link className={s.title} href={`/movie/${movie.id}`}>{movie.title}</Link>
       <p className={s.year}>{movie.release_date.slice(0, 4)}</p>
     </div>
   </div>

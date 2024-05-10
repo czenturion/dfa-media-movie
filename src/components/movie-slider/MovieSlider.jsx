@@ -1,21 +1,18 @@
 import {Carousel} from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {movieImageSize, urlTransform} from "@/app/api/movies";
+import {movieImageSize, urlTransform} from "@/src/api/movies";
 
 const MovieSlider = ({movies}) => {
 
   return (
     <Carousel
-      autoPlay={true}
+      autoPlay
       showThumbs={false}
       infiniteLoop={true}
       showStatus={false}
     >
       {movies.map(movie => (
-        <div
-          key={movie.id}
-          style={{width: '100%', height: "100%"}}
-        >
+        <div key={movie.id}>
           <img
             src={urlTransform.fetchMovieImage(movieImageSize.original, movie.backdrop_path)}
             alt="Poster"
