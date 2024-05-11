@@ -23,14 +23,20 @@ const Home = () => {
     console.log("rerender")
     if (movies && !isLoading) {
       console.log(data, error)
-      dispatch(swap(data))
+      dispatch(add(data))
     }
   }, [data]);
 
   if (isLoading) return <div className={s.gallery}>Loading...</div>;
 
   return <div className={s.gallery}>
-    <MovieSlider movies={movies}/>
+    <div>
+      {
+        movies
+          ? <MovieSlider movies={movies}/>
+          : <></>
+      }
+    </div>
     <div className={s.searchResult}>
       {movies
         ? movies.map(movie => <MovieCard key={movie.id} movie={movie}/>)

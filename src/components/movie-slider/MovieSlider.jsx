@@ -10,6 +10,7 @@ const MovieSlider = ({movies}) => {
       showThumbs={false}
       infiniteLoop={true}
       showStatus={false}
+      dynamicHeight={true}
     >
       {movies.map(movie => (
         <div key={movie.id}>
