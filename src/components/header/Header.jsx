@@ -2,6 +2,7 @@
 
 import s from "./header.module.scss";
 import dynamic from "next/dynamic";
+import SearchInput from "@/src/components/search-input/SearchInput";
 
 // const TopProgressBar = dynamic(
 //   () => {
@@ -12,13 +13,7 @@ import dynamic from "next/dynamic";
 
 export default function Header() {
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-  }
-
   return <div className={s.header}>
-    <form onSubmit={submitHandler}>
-      <input className={s.search} type="text" placeholder="Найти фильм..."/>
-    </form>
+    <SearchInput />
   </div>
 }
