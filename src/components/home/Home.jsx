@@ -20,10 +20,9 @@ const Home = () => {
   const movies = useSelector(state => state.movies.value);
 
   useEffect(() => {
-    // console.log("rerender")
     if (movies && !isLoading) {
       console.log(data, error)
-      dispatch(add(data))
+      dispatch(swap(data))
     }
   }, [data]);
 

@@ -32,6 +32,7 @@ export const movieImageSize = {
 
 export const urlTransform = {
   fetchMovieImage: (size, backdropPath) => {
+    if (backdropPath === null) return null
     return new URL(process.env.API_GET_IMAGE_URL + size + backdropPath).toString()
   }
 }
