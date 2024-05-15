@@ -12,7 +12,7 @@ import MovieSlider from "@/src/components/movie-slider/MovieSlider";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const {data, error, isLoading} = useQuery(
+  const { data, error, isLoading } = useQuery(
     'movies',
     fetchMovies,
   );
@@ -26,8 +26,8 @@ const Home = () => {
     }
   }, [data]);
 
-  if (isLoading) return <div className={s.gallery}>Loading...</div>;
-  if (movies.length === 0) return <h2>Please turn on VPN.</h2>
+  if (isLoading) return <div className={s.vpnHint}>Loading...</div>;
+  if (movies.length === 0) return <h2 className={s.vpnHint}>Please turn on VPN.</h2>
 
   return <div className={s.gallery}>
     <div>

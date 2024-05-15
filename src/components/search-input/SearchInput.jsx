@@ -13,7 +13,7 @@ const SearchInput = () => {
 
   return (
     <form onSubmit={submitHandler}>
-      <input className={s.search} value={searchValue} onChange={e => setSearchValue(e.currentTarget.value)} type="text" placeholder="Найти фильм..."/>
+      <input className={s.search} value={searchValue} onChange={e => setSearchValue(e.currentTarget.value)} type="text" placeholder="Find a movie..."/>
     </form>
   )
 }

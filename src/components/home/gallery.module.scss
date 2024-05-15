@@ -1,5 +1,9 @@
 @import "src/styles/mixins";
 
+.vpnHint {
+  padding-top: 15px;
+}
+
 .gallery {
   @include flexbox(row, wrap, center, center, 20px);
 

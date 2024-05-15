@@ -16,9 +16,7 @@
   @include flex;
   flex-direction: $direction;
   flex-wrap: $wrap;
-  @if $alignItems {
-    align-items: $alignItems;
-  }
+  @if $alignItems { align-items: $alignItems }
   justify-content: $justifyContent;
   gap: $gap;
 }

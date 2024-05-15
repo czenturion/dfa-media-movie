@@ -18,12 +18,22 @@ const options = {
 export const fetchMovies = async () => {
   try {
     const res = await axios(process.env.API_GET_MOVIES_URL, options);
-    return res.data.results
+    return res.data.results;
   } catch (er) {
-    console.log(er);
+    console.error(er);
     return [];
   }
 };
+
+export const fetchMovieById = async ({ id }) => {
+  try {
+    const res = await axios(process.env.API_GET_MOVIE_BY_ID + id, options);
+    return res.data.results;
+  } catch (er) {
+    console.error(er);
+    return [];
+  }
+}
 
 export const movieImageSize = {
   small: 'w500',
